@@ -1,5 +1,5 @@
 import pyttsx3 #pip install pyttsx3: for text data tp speech
-
+import datetime
 engine = pyttsx3.init()
 
 def speak(audio):
@@ -15,8 +15,16 @@ def getvoices(voice):
         engine.setProperty('voice', voices[1].id)
         
     speak("Hello this is moon")    
+
+def time():
+    Time = datetime.datetime.now().strftime("%I:%M:%S")# I for Hour: M for minutes: S for seconds
+    speak("The current ime is:")
+    speak(time)
     
-while True:
-    voice = int(input("Press 1 for male Voice\nPress 2 for female voice\n"))
-    #speak(audio)
-    getvoices(voice)
+    
+# while True:
+#     voice = int(input("Press 1 for male Voice\nPress 2 for female voice\n"))
+#     #speak(audio)
+#     getvoices(voice)
+
+time()
