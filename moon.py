@@ -18,13 +18,22 @@ def getvoices(voice):
 
 def time():
     Time = datetime.datetime.now().strftime("%I:%M:%S")# I for Hour: M for minutes: S for seconds
-    speak("The current ime is:")
-    speak(time)
+    speak("The current Time is:")
+    speak(Time)
     
-    
+def date():
+    year = int(datetime.datetime.now().year)
+    month = int(datetime.datetime.now().month)
+    date = int(datetime.datetime.now().day)
+    speak("The Current date is:")
+    speak(month)
+    speak(date)
+    speak(year)
+      
 # while True:
 #     voice = int(input("Press 1 for male Voice\nPress 2 for female voice\n"))
 #     #speak(audio)
 #     getvoices(voice)
 
-time()
+#time()
+date()
