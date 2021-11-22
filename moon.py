@@ -55,4 +55,20 @@ def wishme():
 #     getvoices(voice)
 
 #time()
-wishme()
+#wishme()
+
+def takeCommandCMD():
+    query = input("Please Tell me how can i help you")
+    return query
+
+if __name__ == '__main__':
+    wishme()
+    while True:
+        query = takeCommandCMD().lower
+        if 'time' in query:
+            time()
+            
+        elif 'date' in query:
+            date()
+    
+    
