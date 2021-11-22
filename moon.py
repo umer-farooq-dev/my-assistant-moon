@@ -29,6 +29,25 @@ def date():
     speak(month)
     speak(date)
     speak(year)
+def greeting():
+    hour = datetime.datetime.now().hour
+    if hour >= 6 and hour <12:
+        speak("Good Morning Sir!")
+    elif hour >=12 and hour <18:
+        speak("Good afternoon Sir!")
+    elif hour >=18 and hour < 24:
+        speak("Good Evening Sir!")
+    else:
+        speak("Good Night Sir")
+    
+   
+def wishme():
+    speak("Welcome Back Sir:")
+    time()
+    date()
+    greeting()
+    speak("Moon at your Service , Please Tell me how can i help you")
+    
       
 # while True:
 #     voice = int(input("Press 1 for male Voice\nPress 2 for female voice\n"))
@@ -36,4 +55,4 @@ def date():
 #     getvoices(voice)
 
 #time()
-date()
+wishme()
