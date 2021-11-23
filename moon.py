@@ -11,11 +11,13 @@ def getvoices(voice):
     voices = engine.getProperty('voices')
     if voice == 1:
         engine.setProperty('voice', voices[0].id)
+        speak("Hello this is Malik") 
         
     if voice == 2:
         engine.setProperty('voice', voices[1].id)
+        speak("Hello this is moon") 
         
-    speak("Hello this is moon")    
+       
 
 def time():
     Time = datetime.datetime.now().strftime("%I:%M:%S")# I for Hour: M for minutes: S for seconds
@@ -64,7 +66,7 @@ def takeCommandCMD():
 
 def takeCommandMic():
     r = sr.Recognizer()
-    with sr.Microphone as source:
+    with sr.Microphone() as source:
         print("Listening....")
         r.pause_threshold = 1
         audio = r.listen(source)
@@ -80,6 +82,7 @@ def takeCommandMic():
         
 
 if __name__ == '__main__':
+    getvoices(2)
     wishme()
     while True:
         query = takeCommandMic().lower()
