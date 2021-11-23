@@ -1,6 +1,9 @@
 import pyttsx3 #pip install pyttsx3: for text data tp speech
 import datetime
 import speech_recognition as sr #pip install SpeechRecognition
+import smtplib #send email library
+from secrets import senderemail, epwd , to
+
 engine = pyttsx3.init()
 
 def speak(audio):
@@ -79,17 +82,26 @@ def takeCommandMic():
         speak("Say that again Please....")
         return "None"
     return query
-        
+  
+def sendEmail():
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls() #ttls= transfer layer security
+    server.login(senderemail, epwd)
+    server.sendmail(senderemail, to, 'Hello this is a test email by Malik')
+    server.close()
+    
+sendEmail()
+          
 
-if __name__ == '__main__':
-    getvoices(2)
-    wishme()
-    while True:
-        query = takeCommandMic().lower()
-        if 'time' in query:
-            time()
+# if __name__ == '__main__':
+#     getvoices(2)
+#     wishme()
+#     while True:
+#         query = takeCommandMic().lower()
+#         if 'time' in query:
+#             time()
             
-        elif 'date' in query:
-            date()
+#         elif 'date' in query:
+#             date()
     
     
